@@ -6,7 +6,10 @@
     "andrewmcgivery <andrew@mcgivery.com>"
   ],
   "description": "An angular port of a Javascript SOAP Client into a factory that has a similar syntax to $http.",
-  "main": ["soapclient.js","angular.soap.js"],
+  "main": [
+    "soapclient.js",
+    "angular.soap.js"
+  ],
   "keywords": [
     "soap",
     "angular",
@@ -20,5 +23,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "_source": "https://github.com/devHamza/angular-soap.git",
+  "_target": "~2.4",
+  "_originalSource": "angular-soap"
 }
