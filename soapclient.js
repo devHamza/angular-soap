@@ -9,7 +9,6 @@
 
 function SOAPClientParameters()
 {
-	console.log('=================== SOAPClientParameters =========================');
 	var _pl = new Array();
 	this.add = function(name, value) 
 	{
@@ -33,14 +32,12 @@ function SOAPClientParameters()
                     break;
             }
 		}
-		console.log(xml);
 		return xml;	
 	}
 }
 SOAPClientParameters._serialize = function(o)
 {
 
-	console.log('=================== _serialize =========================');
     var s = "";
     switch(typeof(o))
     {
@@ -131,7 +128,6 @@ SOAPClient_cacheWsdl = new Array();
 // private: invoke async
 SOAPClient._loadWsdl = function(url, method, parameters, async, callback)
 {
-	console.log('=================== _loadWsdl =========================');
 	// load from cache?
 	var wsdl = SOAPClient_cacheWsdl[url];
 	if(wsdl + "" != "" && wsdl + "" != "undefined")
@@ -159,7 +155,6 @@ SOAPClient._onLoadWsdl = function(url, method, parameters, async, callback, req)
 }
 SOAPClient._sendSoapRequest = function(url, method, parameters, async, callback, wsdl)
 {
-	console.log('=================== _sendSoapRequest =========================');
 	// get namespace
 	var ns = (wsdl.documentElement.attributes["targetNamespace"] + "" == "undefined") ? wsdl.documentElement.attributes.getNamedItem("targetNamespace").nodeValue : wsdl.documentElement.attributes["targetNamespace"].value;
 	// build SOAP request
@@ -235,7 +230,6 @@ SOAPClient._soapresult2object = function(node, wsdl)
 }
 SOAPClient._node2object = function(node, wsdlTypes)
 {
-	console.log('=================== _node2object =========================');
 	// null node
 	if(node == null)
 		return null;
@@ -302,7 +296,6 @@ SOAPClient._extractValue = function(node, wsdlTypes)
 }
 SOAPClient._getTypesFromWsdl = function(wsdl)
 {
-	console.log('=================== _getTypesFromWsdl =========================');
 	var wsdlTypes = new Array();
 	// IE
 	var ell = wsdl.getElementsByTagName("s:element");	
@@ -330,7 +323,6 @@ SOAPClient._getTypesFromWsdl = function(wsdl)
 }
 SOAPClient._getTypeFromWsdl = function(elementname, wsdlTypes)
 {
-	console.log('=================== _getTypeFromWsdl =========================');
     var type = wsdlTypes[elementname] + "";
     return (type == "undefined") ? "" : type;
 }
